@@ -92,21 +92,19 @@ Other external resources used by the scripts include:
 Run commands from the `DSLF/` directory after configuring the external data and
 checkpoint paths.
 
-Based on validation performance, the selected thresholds are `0.5` for
-Twitter15, `0.5` for Twitter16, and `0.8` for Weibo. The examples below use
-these dataset-specific thresholds.
+Based on validation performance, the selected thresholds for similarity
+filtering are `0.5` for Twitter15, `0.5` for Twitter16, and `0.8` for Weibo.
+The examples below use these dataset-specific thresholds for `thred` runs.
 
 ### DSLF Pipeline
 
 ```bash
-python run_dl.py cos 0.5 twitter15
-python run_dl.py cos 0.5 twitter16
-python run_dl.py cos 0.8 weibo
-
 python run_dl.py thred 0.5 twitter15
 python run_dl.py thred 0.5 twitter16
 python run_dl.py thred 0.8 weibo
 ```
+
+For DSLF-W, replace `thred` with `cos` in the commands above.
 
 ### DSLF with Stream II Feature Reuse
 
@@ -128,10 +126,13 @@ Then run the `_St` entry point to regenerate Stream I features and train the
 fusion classifier while loading the existing Stream II features:
 
 ```bash
-python run_dl_St.py cos 0.5 twitter15
-python run_dl_St.py cos 0.5 twitter16
-python run_dl_St.py cos 0.8 weibo
+python run_dl_St.py thred 0.5 twitter15
+python run_dl_St.py thred 0.5 twitter16
+python run_dl_St.py thred 0.8 weibo
 ```
+
+For DSLF-W with Stream II feature reuse, replace `thred` with `cos` in the
+commands above.
 
 In this mode, `DL/generate_train_val_features_St.py` and
 `DL/generate_test_features_St.py` focus on the GLAN-based Stream I feature
@@ -141,10 +142,6 @@ the fusion stage reuses the saved Stream II `.npy` outputs from `checkpoints/`.
 ### E2E Baseline
 
 ```bash
-python run_e2e.py cos 0.5 twitter15
-python run_e2e.py cos 0.5 twitter16
-python run_e2e.py cos 0.8 weibo
-
 python run_e2e.py thred 0.5 twitter15
 python run_e2e.py thred 0.5 twitter16
 python run_e2e.py thred 0.8 weibo
@@ -155,7 +152,8 @@ Arguments:
 - `method`: `cos` for similarity weighting or `thred` for similarity filtering.
 - `threshold`: similarity threshold used by Stream I. In our experiments, this
   value is `0.5`, `0.5`, and `0.8` for Twitter15, Twitter16, and Weibo,
-  respectively.
+  respectively. For `cos`, this argument is still accepted by the scripts but
+  is not used by the cosine-weighting strategy.
 - `data`: one of `twitter15`, `twitter16`, or `weibo`.
 
 ## Outputs
