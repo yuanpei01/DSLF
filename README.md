@@ -19,6 +19,7 @@ generated Stream II features when testing new Stream I settings.
 
 ```text
 DSLF/
+|-- GLAN_cos.py                # Copy to GLAN/model/GGLAN/ before DSLF-W runs
 |-- run_dl.py                  # Run the modular DSLF pipeline
 |-- run_dl_St.py               # Reuse Stream II features and retrain Stream I/fusion
 |-- run_e2e.py                 # Run the end-to-end baseline pipeline
@@ -57,6 +58,19 @@ DSLF/
     |-- twitter_w2v.bin
     |-- weibo_w2v.bin
     `-- dict.txt.big
+```
+
+For DSLF-W (`cos` mode), the additional `GLAN_cos.py` file should be copied
+from the DSLF root directory to the original GLAN code directory:
+
+```text
+GLAN/model/GGLAN/GLAN_cos.py
+```
+
+On Windows, for example:
+
+```powershell
+Copy-Item GLAN_cos.py GLAN\model\GGLAN\GLAN_cos.py
 ```
 
 ### Required External Files
