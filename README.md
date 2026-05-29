@@ -80,8 +80,10 @@ configured in `dataset_config.py` and `process/preprocess_similarty_ST.py`.
 
 Other external resources used by the scripts include:
 
-- GLAN datasets/checkpoints from the GLAN project.
-- BiGCN graph data and pretrained BiGCN checkpoints from the BiGCN project.
+- Original GLAN/RumorDetection code and checkpoints:
+  [chunyuanY/RumorDetection](https://github.com/chunyuanY/RumorDetection).
+- Original BiGCN code, graph data, and pretrained BiGCN checkpoints:
+  [TianBian95/BiGCN](https://github.com/TianBian95/BiGCN).
 - Twitter and Weibo word2vec files used by Stream I.
 - `dict.txt.big` for Jieba Chinese tokenization.
 
