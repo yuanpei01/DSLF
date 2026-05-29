@@ -59,16 +59,31 @@ DSLF/
     `-- dict.txt.big
 ```
 
-External resources used by the scripts include:
+### Required External Files
+
+The following three external files are required but are not included in this
+code release because of their file size:
+
+```text
+process/twitter_w2v.bin
+process/weibo_w2v.bin
+process/dict.txt.big
+```
+
+- `twitter_w2v.bin`: pretrained word2vec file used for Twitter15 and Twitter16.
+- `weibo_w2v.bin`: pretrained word2vec file used for Weibo.
+- `dict.txt.big`: Jieba dictionary file used for Chinese tokenization.
+
+Download or copy these files separately and place them directly under the
+`process/` folder before running the pipeline. The expected paths are already
+configured in `dataset_config.py` and `process/preprocess_similarty_ST.py`.
+
+Other external resources used by the scripts include:
 
 - GLAN datasets/checkpoints from the GLAN project.
 - BiGCN graph data and pretrained BiGCN checkpoints from the BiGCN project.
 - Twitter and Weibo word2vec files used by Stream I.
 - `dict.txt.big` for Jieba Chinese tokenization.
-
-The large files `process/twitter_w2v.bin`, `process/weibo_w2v.bin`, and
-`process/dict.txt.big` are not included in this code release. Download them
-separately and place them under `process/`.
 
 ## Usage
 
