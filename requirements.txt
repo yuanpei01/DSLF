@@ -1,0 +1,11 @@
+gensim
+jieba
+matplotlib
+numpy
+scikit-learn
+scipy
+seaborn
+thop
+torch
+torch-geometric
+tqdm

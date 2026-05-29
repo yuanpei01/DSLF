@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Generated experiment outputs
+checkpoints/
+logs/
+sensitivity_results/
+*.npy
+*.npz
+*.pth
+*.pt
+
+# Large external resources
+process/*.bin
+process/dict.txt.big
+
+# Local environments
+.venv/
+venv/
+env/
+.env
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
