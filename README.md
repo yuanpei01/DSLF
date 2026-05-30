@@ -72,6 +72,26 @@ On Windows, for example:
 ```powershell
 Copy-Item GLAN_cos.py GLAN\model\GGLAN\GLAN_cos.py
 ```
+### Required Modifications
+
+In the original BiGCN codebase, the model definition and training logic are 
+combined within the same file. Specifically, the files:
+
+```text
+BiGCN/model/Twitter/BiGCN_Twitter.py
+BiGCN/model/Weibo/BiGCN_Weibo.py
+```
+
+contain both the model architecture and the complete training procedure. 
+If executed as-is, the script will run a full training loop for BiGCN, which is unnecessary and time-consuming for DSLF.
+To use BiGCN as a feature extractor within DSLF, comment out or delete the training-specific code in the above files. 
+Specifically, locate the following function definition and everything after it:
+
+```python
+def train_GCN(treeDic, x_test, x_train, TDdroprate, BUdroprate, lr, weight_decay, 
+              patience, n_epochs, batchsize, dataname, iter, model):
+    # ... training loop and evaluation logic ...
+```
 
 ### Required External Files
 
