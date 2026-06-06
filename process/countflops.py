@@ -97,12 +97,12 @@ import torch
 from torch.autograd import Variable
 
 # Import your GLAN model (assuming it's already defined as in your original code)
-from GLAN.model.GGLAN.GLAN import GLAN
+from Stream1.model.GGLAN.GLAN import GLAN
 
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
-from GLAN.model.GGLAN.GAT import GATConv
+from Stream1.model.GGLAN.GAT import GATConv
 def compute_params_and_flops(model, input_size):
     total_params = 0
     total_flops = 0

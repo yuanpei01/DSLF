@@ -246,7 +246,7 @@ def gen_tr(repeattimes, data, method="cos", threshold=0.9, seed=None):
     #p_g_est, f_g_est= compute_avg_batch_flops_GLAN(modelGLAN, (128, 50, 300))
     input_size = (128, 50, 300)  
     p_g_est, f_g_est = compute_params_and_flops(modelGLAN, input_size)
-    write_flops(seed, data, method, "DL", "GLAN", f_g_est, p_g_est)
+    write_flops(seed, data, method, "DL", "Stream1", f_g_est, p_g_est)
 
     print(
         f"   GLAN FLOPs={f_g_est / 1e6:.2f}M  Params={p_g_est / 1e6:.2f}M" # [GPU:{device_id}]
@@ -365,7 +365,7 @@ def gen_tr(repeattimes, data, method="cos", threshold=0.9, seed=None):
         dataset=data,
         method=method,
         pipeline="DL",
-        model="GLAN",
+        model="Stream1",
         time_seconds=GLAN_end_time - GLAN_start_time,
     )
 

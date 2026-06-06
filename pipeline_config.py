@@ -27,95 +27,95 @@ def _tag(method):
 
 def path_glan_train_outputs(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_GLAN{_tag(method)}_train_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream1{_tag(method)}_train_outputs{rep}.npy"
     )
 
 
 def path_glan_val_outputs(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_GLAN{_tag(method)}_val_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream1{_tag(method)}_val_outputs{rep}.npy"
     )
 
 
 def path_glan_test_outputs(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_GLAN{_tag(method)}_test_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream1{_tag(method)}_test_outputs{rep}.npy"
     )
 
 def path_glan_train_outputs_dropS(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_GLAN{_tag(method)}_dropS_train_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream1{_tag(method)}_dropS_train_outputs{rep}.npy"
     )
 
 
 def path_glan_val_outputs_dropS(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_GLAN{_tag(method)}_dropS_val_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream1{_tag(method)}_dropS_val_outputs{rep}.npy"
     )
 
 
 def path_glan_test_outputs_dropS(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_GLAN{_tag(method)}_dropS_test_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream1{_tag(method)}_dropS_test_outputs{rep}.npy"
     )
 
 def path_glan_train_outputs_dropC(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_GLAN{_tag(method)}_dropC_train_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream1{_tag(method)}_dropC_train_outputs{rep}.npy"
     )
 
 
 def path_glan_val_outputs_dropC(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_GLAN{_tag(method)}_dropC_val_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream1{_tag(method)}_dropC_val_outputs{rep}.npy"
     )
 
 
 def path_glan_test_outputs_dropC(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_GLAN{_tag(method)}_dropC_test_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream1{_tag(method)}_dropC_test_outputs{rep}.npy"
     )
 
 def path_glan_log(method, data, rep, threshold=0.9):
-    return os.path.join(LOG_DIR, f"{data}_GLAN{_tag(method)}{rep}_{threshold}.txt")
+    return os.path.join(LOG_DIR, f"{data}_Stream1{_tag(method)}{rep}_{threshold}.txt")
 
 def path_glan_dropS_log(method, data, rep):
-    return os.path.join(LOG_DIR, f"{data}_GLAN{_tag(method)}_dropS{rep}.txt")
+    return os.path.join(LOG_DIR, f"{data}_Stream1{_tag(method)}_dropS{rep}.txt")
 def path_glan_dropC_log(method, data, rep):
-    return os.path.join(LOG_DIR, f"{data}_GLAN{_tag(method)}_dropC{rep}.txt")
+    return os.path.join(LOG_DIR, f"{data}_Stream1{_tag(method)}_dropC{rep}.txt")
 
 def path_glan_best_model(method, data, rep):
-    return os.path.join(CHECKPOINT_DIR, f"{data}bestGLAN{_tag(method)}model{rep}.pth")
+    return os.path.join(CHECKPOINT_DIR, f"{data}bestStream1{_tag(method)}model{rep}.pth")
 
 def path_glan_dropS_best_model(method, data, rep):
-    return os.path.join(CHECKPOINT_DIR, f"{data}bestGLAN{_tag(method)}model_dropS{rep}.pth")
+    return os.path.join(CHECKPOINT_DIR, f"{data}bestStream1{_tag(method)}model_dropS{rep}.pth")
 def path_glan_dropC_best_model(method, data, rep):
-    return os.path.join(CHECKPOINT_DIR, f"{data}bestGLAN{_tag(method)}model_dropC{rep}.pth")
+    return os.path.join(CHECKPOINT_DIR, f"{data}bestStream1{_tag(method)}model_dropC{rep}.pth")
 
 def path_bigcn_train_outputs(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_BiGCN{_tag(method)}_train_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream2{_tag(method)}_train_outputs{rep}.npy"
     )
 
 
 def path_bigcn_val_outputs(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_BiGCN{_tag(method)}_val_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream2{_tag(method)}_val_outputs{rep}.npy"
     )
 
 
 def path_bigcn_test_outputs(method, data, rep):
     return os.path.join(
-        CHECKPOINT_DIR, f"{data}_BiGCN{_tag(method)}_test_outputs{rep}.npy"
+        CHECKPOINT_DIR, f"{data}_Stream2{_tag(method)}_test_outputs{rep}.npy"
     )
 
 
 def path_bigcn_log(method, data, rep):
-    return os.path.join(LOG_DIR, f"{data}_BiGCN{_tag(method)}{rep}.txt")
+    return os.path.join(LOG_DIR, f"{data}_Stream2{_tag(method)}{rep}.txt")
 
 
 def path_bigcn_best_model(method, data, rep):
-    return os.path.join(CHECKPOINT_DIR, f"{data}best{_tag(method)}BiGCNmodel{rep}.pth")
+    return os.path.join(CHECKPOINT_DIR, f"{data}best{_tag(method)}Stream2model{rep}.pth")
 
 
 def path_combined_model(method, data, rep):

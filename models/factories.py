@@ -5,25 +5,25 @@ from pipeline_config import Method, glan_module_name,glan_dropS_module_name,glan
 
 def create_glan(method, config, graph):
     _method = Method.COS if method == "cos" else Method.THRED
-    _glan_mod = importlib.import_module(f"GLAN.model.GGLAN.{glan_module_name(_method)}") #这里是重点 从哪个文件加载的模型先看thred版本的
+    _glan_mod = importlib.import_module(f"Stream1.model.GGLAN.{glan_module_name(_method)}") #这里是重点 从哪个文件加载的模型先看thred版本的
     GLAN = _glan_mod.GLAN
     return GLAN(config, graph)
 
 def create_glan_dropS(method, config, graph):
     _method = Method.COS if method == "cos" else Method.THRED
-    _glan_mod = importlib.import_module(f"GLAN.model.GGLAN.{glan_dropS_module_name(_method)}") #这里是重点 从哪个文件加载的模型先看thred版本的
+    _glan_mod = importlib.import_module(f"Stream1.model.GGLAN.{glan_dropS_module_name(_method)}") #这里是重点 从哪个文件加载的模型先看thred版本的
     GLAN = _glan_mod.GLAN
     return GLAN(config, graph)
 
 def create_glan_dropC(method, config, graph):
     _method = Method.COS if method == "cos" else Method.THRED
-    _glan_mod = importlib.import_module(f"GLAN.model.GGLAN.{glan_dropC_module_name(_method)}") #这里是重点 从哪个文件加载的模型先看thred版本的
+    _glan_mod = importlib.import_module(f"Stream1.model.GGLAN.{glan_dropC_module_name(_method)}") #这里是重点 从哪个文件加载的模型先看thred版本的
     GLAN = _glan_mod.GLAN
     return GLAN(config, graph)
 
 # def create_glan_and_module(method, config, graph):
 #     _method = Method.COS if method == "cos" else Method.THRED
-#     _glan_mod = importlib.import_module(f"GLAN.model.GGLAN.{glan_module_name(_method)}")
+#     _glan_mod = importlib.import_module(f"Stream1.model.GGLAN.{glan_module_name(_method)}")
 #     GLAN = _glan_mod.GLAN
 #     return GLAN(config, graph), _method
 

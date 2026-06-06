@@ -4,7 +4,7 @@ import torch
 from torch_geometric.data import Data
 import re
 from .preprocess_similarty_ST import *
-from BiGCN.Process.dataset import BiGraphDataset
+from Stream2.Process.dataset import BiGraphDataset
 from .dataload import load_bigcn_data
 import pickle
 import os
@@ -174,7 +174,7 @@ def loadLabelData(obj, seed=42):
 
     if "Twitter" in obj:
         labelPath = os.path.join(
-            "./BiGCN/", "data/" + obj + "/" + obj + "_label_All.txt"
+            "./Stream2/", "data/" + obj + "/" + obj + "_label_All.txt"
         )
         labelset_nonR = ["news", "non-rumor"]
         labelset_f = ["false"]
@@ -227,7 +227,7 @@ def loadTree(dataname, seed=42):
             else DATASET_CONFIG["twitter15"]
         )
         treePath = os.path.join(
-            "./BiGCN/", "data/" + dataname + "/data.TD_RvNN.vol_5000.txt"
+            "./Stream2/", "data/" + dataname + "/data.TD_RvNN.vol_5000.txt"
         )
         print("reading Twitter tree")
         for line in open(treePath):
@@ -251,7 +251,7 @@ def loadTree(dataname, seed=42):
         print("tree no:", len(treeDic))
 
     if dataname == "Weibo":
-        treePath = os.path.join("./BiGCN/", "data/Weibo/weibotree.txt")
+        treePath = os.path.join("./Stream2/", "data/Weibo/weibotree.txt")
         print("reading Weibo tree")
         for line in open(treePath):
             line = line.rstrip()
@@ -276,7 +276,7 @@ def loadTree(dataname, seed=42):
 
 def loadData(dataname, treeDic, fold_x_train, fold_x_test, droprate, seed=42):
     random.seed(seed)
-    data_path = os.path.join("./BiGCN/", "data", dataname + "graph")
+    data_path = os.path.join("./Stream2/", "data", dataname + "graph")
 
     print("loading train set")
     print("origional train no:", len(fold_x_train))
@@ -295,7 +295,7 @@ def loadData(dataname, treeDic, fold_x_train, fold_x_test, droprate, seed=42):
 
 def loadUdData(dataname, treeDic, fold_x_train, fold_x_test, droprate, seed=42):
     random.seed(seed)
-    data_path = os.path.join("./BiGCN/", "data", dataname + "graph")
+    data_path = os.path.join("./Stream2/", "data", dataname + "graph")
 
     print("loading train set")
     print("origional train no:", len(fold_x_train))
@@ -316,7 +316,7 @@ def loadBiData(
     dataname, treeDic, fold_x_train, fold_x_test, TDdroprate, BUdroprate, seed=42
 ):
     random.seed(seed)
-    data_path = os.path.join("./BiGCN/", "data", dataname + "graph")
+    data_path = os.path.join("./Stream2/", "data", dataname + "graph")
 
     print("loading train set")
     print("origional train no:", len(fold_x_train))

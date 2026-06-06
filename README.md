@@ -48,10 +48,10 @@ the paths in `dataset_config.py`:
 
 ```text
 DSLF/
-|-- GLAN/
+|-- Stream1/
 |   |-- checkpoint/
 |   `-- dataset/
-|-- BiGCN/
+|-- Stream2/
 |   |-- data/
 |   `-- pretrained_BiGCNmodel_*.pth
 `-- process/
@@ -64,13 +64,13 @@ For DSLF-W (`cos` mode), the additional `GLAN_cos.py` file should be copied
 from the DSLF root directory to the original GLAN code directory:
 
 ```text
-GLAN/model/GGLAN/GLAN_cos.py
+Stream1/model/GGLAN/GLAN_cos.py
 ```
 
 On Windows, for example:
 
 ```powershell
-Copy-Item GLAN_cos.py GLAN\model\GGLAN\GLAN_cos.py
+Copy-Item GLAN_cos.py Stream1\model\GGLAN\GLAN_cos.py
 ```
 ### Required Modifications
 
@@ -115,9 +115,9 @@ configured in `dataset_config.py` and `process/preprocess_similarty_ST.py`.
 Other external resources used by the scripts include:
 
 - Original GLAN/RumorDetection code and checkpoints:
-  [chunyuanY/RumorDetection](https://github.com/chunyuanY/RumorDetection).
+  [chunyuanY/RumorDetection](https://github.com/chunyuanY/RumorDetection). Rename the 'RumorDetection-master' folder to 'Stream1'.
 - Original BiGCN code, graph data, and pretrained BiGCN checkpoints:
-  [TianBian95/BiGCN](https://github.com/TianBian95/BiGCN).
+  [TianBian95/BiGCN](https://github.com/TianBian95/BiGCN). Rename the 'BiGCN-master' folder to 'Stream2'.
 - Twitter and Weibo word2vec files used by Stream I.
 - `dict.txt.big` for Jieba Chinese tokenization.
 
@@ -151,9 +151,9 @@ First run the standard DSLF pipeline once for the same dataset, method, and seed
 setting so that the Stream II feature files are created under `checkpoints/`:
 
 ```text
-{data}_BiGCN{method}_train_outputs{rep}.npy
-{data}_BiGCN{method}_val_outputs{rep}.npy
-{data}_BiGCN{method}_test_outputs{rep}.npy
+{data}_Stream2{method}_train_outputs{rep}.npy
+{data}_Stream2{method}_val_outputs{rep}.npy
+{data}_Stream2{method}_test_outputs{rep}.npy
 ```
 
 Then run the `_St` entry point to regenerate Stream I features and train the
