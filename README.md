@@ -19,7 +19,7 @@ generated Stream II features when testing new Stream I settings.
 
 ```text
 DSLF/
-|-- GLAN_cos.py                # Copy to GLAN/model/GGLAN/ before DSLF-W runs
+|-- GLAN_cos.py                # Copy to Stream1/model/GGLAN/ before DSLF-W runs
 |-- run_dl.py                  # Run the modular DSLF pipeline
 |-- run_dl_St.py               # Reuse Stream II features and retrain Stream I/fusion
 |-- run_e2e.py                 # Run the end-to-end baseline pipeline
